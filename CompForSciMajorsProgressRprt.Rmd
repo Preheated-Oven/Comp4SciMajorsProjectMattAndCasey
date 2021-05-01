@@ -9,22 +9,26 @@ output: html_document
 #The timing circuit used is a digital LED relay board timing circuit found at https://www.amazon.com/Digital-Timing-Circuit-Switch-Trigger/dp/B074TBRRTY/ref=sr_1_3?dchild=1&keywords=timing+circuit&qid=1617815030&sr=8-3
 #My initial plan will be to use the included button function. When the button is pressed, it will set the voltage to high. The program will then start a timer. The timer will stop when the voltage is set to low. The result will then be printed.
 
-#Example code
+#Example code (Example code was succesful, no modification required)
 ```{python}
 from gpiozero import Button
 from signal import pause
 from time import time
+#above code imports necessary functions. "Button" detects when a circuit is completed. Since the timing circuit functions by opening a closing a circuit at regular intrevals, it is functionally the same as a self pressing button.
 
 def time_start():
     time()
 def time_end():
     time()
 button = Button(2)
+#This will allow the Pi to record the cycles of the timing circuit so they can be shown later.
 
 button.when_pressed = time_start
 button.when_released = time_end
+#This refers the changes in the circuit back to the set above.
 
 print['time_start'-'time_end']
+#This produces the intervals at which the timing circuit cycles in a manner that can be read by the user.
 
 pause()
 ```
