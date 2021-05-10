@@ -1,1 +1,3 @@
 # Comp4SciMajorsProjectMattAndCasey
+# The goal of this project was to connect a timing circuit to a Raspberry Pi and use a simple program to measure the cycles of the circuit.
+# This goal was accomplished by experimenting with the circuit (no instructions were included with it) until its operation was understood. It was than connected to the Pi's GPU pins through a bread board. Power was supplied through the GPU 5v output, and a circuit was made between ground and one of the input pins. The timing circuit was then programmed to switch between open and closed position at regular intervals. The Pi was able to detect this opening and closing thanks to a built in feature in the Pi's OS. The program then interpreted these signals to find the time of each cycle.
