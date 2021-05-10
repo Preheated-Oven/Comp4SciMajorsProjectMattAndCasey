@@ -14,15 +14,18 @@ output: html_document
 from gpiozero import Button
 from signal import pause
 from time import time
+#These are the definitions that will be used in this code. "Button" is a function that will detect when the timing circuit opens and closes the circuit. "time" will refer to the time ellapsed between intervals. In this case, the opening and closing of the circuit.
 
 def time_start():
     time()
 def time_end():
     time()
 button = Button(2)
+#These definitions will be used below to measure intervals of time between the circuit opening and closing.
 
 button.when_pressed = time_start
 button.when_released = time_end
+#This code will read the intervals between the circuit opening and closing and return the time ellapsed with the "print" command bellow.
 
 print['time_start'-'time_end']
 
